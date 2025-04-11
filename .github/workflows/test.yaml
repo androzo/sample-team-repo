@@ -1,0 +1,15 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  prompt-for-input:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Prompt for user input
+        run: |
+          echo "Please enter your input:"
+          read user_input
+          echo "You entered: $user_input"
